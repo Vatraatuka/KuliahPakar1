@@ -112,15 +112,20 @@
     <main>
       <div class="container">
         <h1>Login</h1>
-        <form action="dashboard.html" method="post">
+
+        <div class="form-row">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username" required />
+        </div>
 
+        <div class="form-row">
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required />
+        </div>
 
-          <button type="submit">Masuk</button>
-        </form>
+        <button id="submit">Masuk</button>
+        <p id="error-message" style="color: red"></p>
+        <!-- Tempat untuk menampilkan pesan error -->
       </div>
     </main>
 
