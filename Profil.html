@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil - KULIAH PAKAR</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      /* Latar belakang video */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Video latar belakang */
+      video.background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Pastikan video ada di belakang konten */
+      }
+      /* Kontainer utama */
+      .container {
+        background: rgba(0, 0, 0, 0.6); /* Latar belakang gelap */
+        padding: 60px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        max-width: 900px;
+        margin: 150px auto;
+        text-align: center;
+        backdrop-filter: blur(5px); /* Efek blur pada latar belakang */
+      }
+
+      /* Gambar */
+      .main-image {
+        max-width: 100%; /* Gambar akan menyesuaikan ukuran kontainer */
+        height: auto; /* Menjaga rasio aspek gambar */
+        margin-top: 20px; /* Memberikan jarak antara gambar dan konten teks */
+        border-radius: 10px; /* Menambahkan sudut melengkung pada gambar */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan pada gambar */
+      }
+
+      /* Judul */
+      h1 {
+        font-size: 3.5em;
+        font-weight: bold;
+        color: transparent;
+        background: linear-gradient(to right, #00d2ff, #00ffcc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+        animation: slideInFromLeft 3s ease-out, pulse 2s infinite;
+      }
+
+      /* Animasi untuk efek masuk dan pulsasi */
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .container {
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 100px auto;
+        text-align: center;
+        z-index: 1; /* Agar konten berada di atas video */
+        position: relative;
+      }
+
+      h1 {
+        color: hsl(270, 14%, 91%);
+        margin-bottom: 20px;
+      }
+
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 30px;
+        object-fit: cover;
+      }
+
+      .profile-info {
+        color: hsl(0, 0%, 100%); /* Warna putih untuk teks profil */
+        font-size: 1.1em;
+        text-align: left;
+      }
+
+      /* Styling untuk menu navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-around; /* Untuk mendistribusikan item secara horizontal */
+        background-color: rgba(0, 77, 122, 0.9);
+        padding: 15px 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar a {
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        display: inline-block;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+      }
+      /* Kontainer utama */
+      .container {
+        background: rgba(0, 0, 0, 0.6); /* Latar belakang gelap */
+        padding: 60px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        max-width: 900px;
+        margin: 150px auto;
+        text-align: center;
+        backdrop-filter: blur(5px); /* Efek blur pada latar belakang */
+        color: white; /* Mengubah warna teks menjadi putih */
+      }
+
+      /* Gambar */
+      .main-image {
+        max-width: 100%; /* Gambar akan menyesuaikan ukuran kontainer */
+        height: auto; /* Menjaga rasio aspek gambar */
+        margin-top: 20px; /* Memberikan jarak antara gambar dan konten teks */
+        border-radius: 10px; /* Menambahkan sudut melengkung pada gambar */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan pada gambar */
+      }
+
+      /* Paragraf teks sejarah */
+      p {
+        text-align: justify; /* Meratakan teks kiri dan kanan */
+        line-height: 1.6; /* Menambahkan jarak antar baris untuk keterbacaan */
+        font-size: 1.1em; /* Menyesuaikan ukuran font agar lebih mudah dibaca */
+        margin-bottom: 20px; /* Memberikan jarak antar paragraf */
+      }
+      /* Menyematkan Google Form */
+      section {
+        padding: 60px 0;
+      }
+
+      section h5 {
+        font-size: 2em;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      iframe {
+        width: 100%;
+        height: 1416px;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      /* Responsif untuk layar kecil */
+      @media (max-width: 768px) {
+        iframe {
+          height: 1000px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        iframe {
+          height: 800px;
+        }
+      }
+    </style>
+  </head>
+  <body class="w3-theme-l5">
+    <!-- Video Background -->
+    <video class="background-video" autoplay loop muted>
+      <source src="backgroun 2.mp4" type="video/mp4" />
+      Browser Anda tidak mendukung elemen video.
+    </video>
+
+    <!-- Konten utama -->
+    <main>
+      <div class="container">
+        <h1>STIKES BAKTI NUSANTARA GORONTALO</h1>
+        <p>
+          Pendidikan Nasional bertujuan mencerdaskan kehidupan bangsa dan
+          mengembangkan manusia Indonesia seutuhnya melalui pembentukan manusia
+          yang beriman dan bertakwa kepada Tuhan Yang Maha Esa serta berbudi
+          pekerti luhur, memiliki pengetahuan dan keterampilan, sehat jasmani
+          dan rohani, berkepribadian yang terpuji, percaya diri, mandiri,
+          disiplin, jujur, mampu bekerja keras dan memiliki rasa tanggung jawab
+          kebangsaan dan juga pada masyarakat. Sekolah Tinggi Ilmu Kesehatan
+          Bakti Nusantara Gorontalo sebagai lembaga pendidikan ikut bertanggung
+          jawab untuk mencerdaskan kehidupan bangsa melalui pendidikan dan
+          melahirkan peserta didik, menjadi anggota masyarakat yang memiliki
+          kemampuan, kecakapan, keterampilan dan mengemban/menyebarluaskan ilmu
+          pengetahuan, teknologi dan seni di bidang Kesehatan, untuk
+          meningkatkan derajat Kesehatan keluarga, masyarakat, bangsa dan
+          Negara. Untuk melaksanakan peran pendidikan tersebut, Sekolah Tinggi
+          Ilmu Kesehatan Bakti Nusantara Gorontalo memerlukan suatu landasan
+          sebagai pedoman dasar guna merencanakan, menyelenggarakan kegiatan
+          maupun mengembangkan program pendidikan serta rujukan pengembangan
+          peraturan umum, peraturan akademik dan prosedur operasional yang
+          berlaku. Dengan demikian, maka Statuta Sekolah Tinggi Ilmu Kesehatan
+          Bakti Nusantara Gorontalo ini ditetapkan untuk menjadi pedoman
+          pelaksanaan tugas dan tanggung jawab Sivitas Akademika.
+        </p>
+        <img
+          src="c:\Users\INTEL\Downloads\kode\kode\pengelola-1.jpg"
+          alt="Foto Beranda"
+          class="main-image"
+        />
+      </div>
+    </main>
+    <!-- Menutup tag <main> -->
+
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="dashboard.html" aria-label="Beranda">
+        <i class="fa fa-home"></i>
+      </a>
+      <a href="Lokasi.html" aria-label="Lokasi">
+        <i class="fa fa-map-marker"></i>
+        <span class="sr-only">Lokasi</span>
+      </a>
+      <a href="Profil.html" aria-label="Profil">
+        <i class="fa fa-user"></i>
+      </a>
+      <a href="PromosiKampus.html" aria-label="Promosi Kampus">
+        <i class="fa fa-university"></i>
+        <span class="sr-only">Promosi Kampus</span>
+      </a>
+      <a href="logout.html" aria-label="Keluar">
+        <i class="fa fa-sign-out"></i>
+        <span class="sr-only">Keluar</span>
+      </a>
+    </div>
+    <script>
+      // Fungsi untuk mengaktifkan dan menonaktifkan menu di perangkat mobile
+      // Fungsi ini tidak diperlukan lagi karena tombol hamburger dihapus
+    </script>
+  </body>
+</html>
